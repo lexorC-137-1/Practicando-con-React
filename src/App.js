@@ -1,15 +1,16 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./Paginas/Home"
+import Home from "./Paginas/Home";
 import Encriptador from "./Challenges/Encriptador";
 import Portafolio from "./Challenges/Portafolio";
 import AluraGeeks from "./Challenges/Alurageeks";
 import AluraFlix from "./Challenges/Aluraflix";
 import Page404 from "./Paginas/Page404";
-
+import Header from "./Componentes/Header";
 
 function App() {
   return (
     <Router>
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/encriptador" element={<Encriptador />} />
