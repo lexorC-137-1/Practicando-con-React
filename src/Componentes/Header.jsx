@@ -1,14 +1,14 @@
-
+import { Link } from "react-router-dom";
 
 const Header = () => {
     return (<>
         <nav>
             <ul>
-                <li><a href="/">Entrar</a></li>
-                <li><a href="/encriptador">Encriptador</a></li>
-                <li><a href="/portafolio">Portafolio</a></li>
-                <li><a href="/alurageeks">AluraGeeks</a></li>
-                <li><a href="/aluraflix">Aluraflix</a></li>
+                <li><Link to="/">Entrar</Link></li>
+                <li><Link to="/encriptador">Encriptador</Link></li>
+                <li><Link to="/portafolio">Portafolio</Link></li>
+                <li><Link to="/alurageeks">AluraGeeks</Link></li>
+                <li><Link to="/aluraflix">Aluraflix</Link></li>
                 
             </ul>
         </nav>
