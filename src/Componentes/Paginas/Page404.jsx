@@ -1,4 +1,4 @@
-import "../Assets/404.css"
+import "../../Assets/Css/404.css"
 
 
 const Page404 = () => {
