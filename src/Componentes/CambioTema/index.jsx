@@ -1,6 +1,6 @@
 import React from "react";
-import themeOn from "../../Assets/Images/themeOn.svg";
-import themeOff from "../../Assets/Images/themeOff.svg";
+import themeOn from "../../Assets/Imagenes/CambioTema/themeOn.svg";
+import themeOff from "../../Assets/Imagenes/CambioTema/themeOff.svg";
 import { Icono } from "../UI";
 
 

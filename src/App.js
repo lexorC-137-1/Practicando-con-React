@@ -12,9 +12,9 @@ import { ThemeProvider } from "styled-components";
 import { temaClaro, temaOscuro } from "./Componentes/UI/temas";
 import { BtnTema } from "./Componentes/UI";
 import CambioTema from "./Componentes/CambioTema";
+import Foorter from "./Componentes/Footer";
 
 
-console.log(temaClaro,temaOscuro);
 function App() {
   const [tema, setTema] = useState(true);
   const activadorTema = () => {
@@ -36,7 +36,8 @@ function App() {
           <Route path="/aluraflix" element={<AluraFlix />} />
           <Route path="*" element={<Page404 />} />        
       </Routes>
-      </ThemeProvider>    
+      </ThemeProvider> 
+      <Foorter />   
     </Router>
   );
 }

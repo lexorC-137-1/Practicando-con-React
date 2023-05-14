@@ -6,8 +6,12 @@ const StyledHeader = styled.nav`
     background-color: ${colorPrimario};
     display: flex;
     justify-content: space-around;
-    padding: 3vw;
+    padding: 2vw;
     align-items: center;
+    font-weight: 600;
+    @media (max-width: 800px) {
+        flex-direction: column;
+    }
 `
 
 const Header = () => {

@@ -4,12 +4,7 @@ import { StyledContainer, StyledContent, Box } from "../UI";
 
 const Home = () => {
     return (
-        <StyledContainer>
-            <StyledContent>
-                <Box>Home</Box>
-            </StyledContent>
-        </StyledContainer>
-
+        <></>
     )
 }
 

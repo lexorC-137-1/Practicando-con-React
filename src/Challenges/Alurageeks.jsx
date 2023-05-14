@@ -3,13 +3,7 @@ import { StyledContainer, StyledContent, Box } from "../Componentes/UI";
 
 
 const AluraGeeks = () => {
-    return (
-        <StyledContainer>
-        <StyledContent>
-            <Box>Alurageeks</Box>
-        </StyledContent>
-    </StyledContainer>
-    )
+    return <></>
 }
 
 export default AluraGeeks;
