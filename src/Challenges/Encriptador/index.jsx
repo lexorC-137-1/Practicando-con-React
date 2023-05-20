@@ -1,89 +1,87 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Input, Button, Space } from "antd";
-import {  StyledContenedor } from "../../Componentes/UI";
 import Logo from "../../Assets/Imagenes/Encriptador/Logo.svg"
 import Vector from "../../Assets/Imagenes/Encriptador/Vector.svg"
-import "./estilos.css"
 import { Copiar, Desencriptar, Encriptar } from "./logica";
+import "./estilos.css"
 
 
-
-const EncriptadorImg = styled.img`
-    padding-top: 1vh;
-    margin-left: 0.5vw;
-
+const EncriptadorContenedor = styled.section`
+    background-color: ${({theme}) => theme.body};
+    min-width: 90vw;
+    min-height: 90vh;
+    padding: 2vh 1vw;    
+    display: flex;
+    flex-direction: row;
 `
-
 const EncriptadorMain = styled.main`
-    background-color: #f3f5fc;
-    height: 90vh;
-    margin: 3.3vh;
-    padding: 6vh;
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 150%;
+    background-color: ${({theme}) => theme.inside};
+    height: auto;
+    max-width: 95vw;
+    margin: 3.3vh ;
+    padding: 6vh 6vw;
     border-radius: 0.5rem;
     box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.4);
     display: flex;
     justify-content: space-between;
-    @media (min-width: 300px){
+    @media screen and (max-width: 425px) {
+
+    }
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+    }
+    @media (max-width: 1200px) {
+
+    }
+`
+const EncriptadorContenido = styled.div`
+    @media screen and (max-width: 425px) {
         min-width: 50vw;
     }
-    @media (width: 800) {
+    @media screen and (max-width: 768px) {
         width: 60vw;
-        flex-direction: row;
     }
     @media (min-width: 1200px) {
         max-width: 95vw;
     }
 `
+const EncriptadorImg = styled.img`
+    width: 5%;
 
-const EncriptadorSection = styled.section`
-    font-family: "Inter";
-    font-weight: 400;
-    font-size: 2rem;
-    line-height: 150%; 
 `
-
-const EncriptadorDiv = styled.div`
-    background-color: ${({theme}) => theme.inside};
-    color: ${({theme}) => theme.text};
-    width: 20vw;
+const EncriptadorCaja = styled.div`
+    background-color: ${({theme}) => theme.body};
     height: 78vh;
-    padding: 5vh 2vw;
+    margin-left: 9vw;
     border-radius: 5rem;
-    box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.4);
+    box-shadow: 2vh 2vw 20px 0px rgba(0, 0, 0, 0.4);
     display: flex;
-    justify-content: space-around;
     flex-direction: column;
     align-items: center;
     @media (min-width: 400px) {
-       min-height: 60vh;
-       min-width: 25;
     }
     @media (min-width: 1200px) {
-        max-height: 78vh;
-        width: 35vw;
     }  
 `
-
 const EncriptadorVector = styled.img`
-    padding-bottom: 0.4vh;
 `
-
 const EncriptadorH6 = styled.h6`
-    color: #495057;
+    color: ${({theme}) => theme.text};
     font-size: 1.5rem;
 
 `
-
-
-
  
 const Encriptador = () => {
     return (
-        <StyledContenedor>
+        <EncriptadorContenedor>
             <EncriptadorMain>
-                <EncriptadorSection>
-                    <EncriptadorVector src={Logo} alt="Alura logo"/>
+                <EncriptadorContenido>
+                    <EncriptadorImg src={Logo} alt="Alura logo"/>
                     <Input className="text-area" placeholder="Ingrese su texto aqui" cols={30} rows={10} bordered={false} />
                     
                     <Space className="alerta">
@@ -96,20 +94,20 @@ const Encriptador = () => {
                         <Button className="btnDesencriptar" onClick={Desencriptar} >Desencriptar</Button>
                     </Space>
 
-                </EncriptadorSection>
-                    <EncriptadorSection>
-                            <EncriptadorDiv>
+                </EncriptadorContenido>
+                <EncriptadorContenido>
+                            <EncriptadorCaja>
 
                                 <Input className="mensaje" bordered={false} />
                                     <Space wrap>
                                         <Button className="btnCopiar" onClick={Copiar} >Copiar</Button>
                                     </Space>
 
-                            </EncriptadorDiv>
+                            </EncriptadorCaja>
 
-                    </EncriptadorSection>
+                </EncriptadorContenido>
             </EncriptadorMain>
-        </StyledContenedor>
+        </EncriptadorContenedor>
     )
 }
 

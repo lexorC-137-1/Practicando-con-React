@@ -21,23 +21,23 @@ function App() {
     setTema((tema) => !tema)
   }
   return (
-      <Router>
+    <Router>
       <ThemeProvider theme={tema ? temaClaro : temaOscuro} >
-      <GlobalStyle />
-      <BtnTema onClick={activadorTema}>
-        <CambioTema  tema={tema} />
-      </BtnTema>
-      <Header />      
-      <Routes>        
-          <Route path="/" element={<Home />} />
-          <Route path="/encriptador" element={<Encriptador />} />
-          <Route path="/portafolio" element={<Portafolio />} />
-          <Route path="/alurageeks" element={<AluraGeeks />} />
-          <Route path="/aluraflix" element={<AluraFlix />} />
-          <Route path="*" element={<Page404 />} />        
-      </Routes>
+        <GlobalStyle />
+        <BtnTema onClick={activadorTema}>
+          <CambioTema  tema={tema} />
+        </BtnTema>
+        <Header />      
+        <Routes>        
+            <Route path="/" element={<Home />} />
+            <Route path="/encriptador" element={<Encriptador />} />
+            <Route path="/portafolio" element={<Portafolio />} />
+            <Route path="/alurageeks" element={<AluraGeeks />} />
+            <Route path="/aluraflix" element={<AluraFlix />} />
+            <Route path="*" element={<Page404 />} />        
+        </Routes>
+        <Foorter />   
       </ThemeProvider> 
-      <Foorter />   
     </Router>
   );
 }

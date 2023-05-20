@@ -5,8 +5,8 @@ import { Icono } from "../UI";
 
 
 export default ({tema}) => {
-    const claro = <Icono src={themeOn} alt="Tema Claro" />;
-    const oscuro = <Icono src={themeOff} alt="Tema Oscuro" />;
+    const claro = <Icono src={themeOff} alt="Tema Claro" />;
+    const oscuro = <Icono src={themeOn} alt="Tema Oscuro" />;
 
     return <>{tema ? oscuro : claro}</>;
 };

@@ -1,9 +1,7 @@
-export const colorPrimario = "darkorange";
+export const fondoClaro = "#d7f7e3";
+export const contenidoClaro = "#b7eef6"
+export const textoFondoClaro = "#165b6a";
 
-export const fondoClaro = "#f1f1f1";
-export const contenidoClaro = "white"
-export const textoFondoClaro = "grey";
-
-export const fondoOscuro = "#363537";
-export const contenidoOscuro = "#5c5b5e";
-export const textoFondoOscuro = "#FaFaFa";
+export const fondoOscuro = "#5c5b5e";
+export const contenidoOscuro = "#363537";
+export const textoFondoOscuro = "#f8bb8c";

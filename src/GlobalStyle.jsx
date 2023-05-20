@@ -8,5 +8,11 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     text-decoration: none;
     }
+    ol,ul,li {
+        list-style: none;
+    }
+    a{
+        text-decoration: none;
+    }
 `
 export default GlobalStyle;

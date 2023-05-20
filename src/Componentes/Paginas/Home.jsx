@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { StyledContainer, StyledContent, Box } from "../UI";
+import { useState } from "react";
 
 
 const Home = () => {
