@@ -1,10 +1,8 @@
-import React, { useState } from "react";
 import styled from "styled-components";
 import { Input, Button, Space } from "antd";
 import Logo from "../../Assets/Imagenes/Encriptador/Logo.svg"
 import Vector from "../../Assets/Imagenes/Encriptador/Vector.svg"
 import { Copiar, Desencriptar, Encriptar } from "./logica";
-import "./estilos.css"
 
 
 const EncriptadorContenedor = styled.section`
@@ -54,6 +52,55 @@ const EncriptadorImg = styled.img`
     width: 5%;
 
 `
+const EncriptadorEntrada = styled(Input)`
+    font-size: 2.5rem;
+    color: #0a3871;
+    margin: 7vh 0 33vh 10vw;
+    text-transform: lowercase;
+    ::placeholder {
+        color: #0a3871;        
+    }
+`
+const EncriptadorAlerta = styled(Space)`
+    margin-left: 5vw;
+
+`
+const EncriptadorVector = styled.img`
+    padding: 0.35vh;
+`
+const EncriptadorH6 = styled.h6`
+    color: ${({theme}) => theme.text};
+    font-size: 1.5rem;
+`
+const EncriptadorBotones = styled(Space)`
+    display: flex;
+    margin-top: 3vh;
+    @media (max-width: 800px){
+        flex-direction: columm;
+    }
+`
+const EncriptadorBtnEncriptar = styled(Button)`
+    font-size: 2rem;
+    background-color: #0a3871;
+    border: 1px solid #0a3871;
+    border-radius: 2rem;
+    color: white;
+    cursor:pointer;
+    height: 8vh;
+    width: 15vw;
+    margin-left: 5vw;
+`
+const EncriptarBtnDesencriptar = styled(Button)`
+    font-size: 2rem;
+    background-color: white;
+    border: 1px solid #0a3871;
+    border-radius: 2rem;
+    color: #0a3871;
+    cursor:pointer;
+    height: 8vh;
+    width: 15vw;
+    margin-left: 5vw;
+`
 const EncriptadorCaja = styled.div`
     background-color: ${({theme}) => theme.body};
     height: 78vh;
@@ -68,44 +115,56 @@ const EncriptadorCaja = styled.div`
     @media (min-width: 1200px) {
     }  
 `
-const EncriptadorVector = styled.img`
+const EncriptadorSalida = styled(Input)`
+    font-size: 2.5rem;
+    background-image: url("../../Assets/Imagenes/Encriptador/Muñeco.svg");
+    background-repeat: no-repeat;
+    border-radius: 2rem;
+    color: #0a3871; 
+    height: 40vh;
+    margin-left: 13vw;
 `
-const EncriptadorH6 = styled.h6`
-    color: ${({theme}) => theme.text};
-    font-size: 1.5rem;
-
+const EncriptadorBtnCopiar = styled(Button)`
+    font-size: 2rem;
+    background-color: white;
+    border: 1px solid #0a3871;
+    border-radius: 2rem;
+    color: #0a3871;
+    cursor: pointer;
+    height: 8vh;
+    width: 15vw;
 `
  
 const Encriptador = () => {
     return (
         <EncriptadorContenedor>
             <EncriptadorMain>
+
                 <EncriptadorContenido>
                     <EncriptadorImg src={Logo} alt="Alura logo"/>
-                    <Input className="text-area" placeholder="Ingrese su texto aqui" cols={30} rows={10} bordered={false} />
-                    
-                    <Space className="alerta">
+                    <EncriptadorEntrada placeholder="Ingrese su texto aqui" cols={30} rows={10} bordered={false} />
+                    <EncriptadorAlerta>
                         <EncriptadorVector src={Vector} alt="alerta" />    
                         <EncriptadorH6>Solo letras minusculas y sin acentos</EncriptadorH6>
-                    </Space>
-
-                    <Space className="botones" wrap>
-                        <Button className="btnEncriptar" type="primary" onClick={Encriptar} >Encriptar</Button>
-                        <Button className="btnDesencriptar" onClick={Desencriptar} >Desencriptar</Button>
-                    </Space>
-
+                    </EncriptadorAlerta>
+                    <EncriptadorBotones wrap>
+                        <EncriptadorBtnEncriptar type="primary" onClick={Encriptar} >Encriptar</EncriptadorBtnEncriptar>
+                        <EncriptarBtnDesencriptar onClick={Desencriptar} >Desencriptar</EncriptarBtnDesencriptar>
+                    </EncriptadorBotones>
                 </EncriptadorContenido>
+                
                 <EncriptadorContenido>
                             <EncriptadorCaja>
 
-                                <Input className="mensaje" bordered={false} />
+                                <EncriptadorSalida bordered={false} />
                                     <Space wrap>
-                                        <Button className="btnCopiar" onClick={Copiar} >Copiar</Button>
+                                        <EncriptadorBtnCopiar onClick={Copiar} >Copiar</EncriptadorBtnCopiar>
                                     </Space>
 
                             </EncriptadorCaja>
 
                 </EncriptadorContenido>
+
             </EncriptadorMain>
         </EncriptadorContenedor>
     )

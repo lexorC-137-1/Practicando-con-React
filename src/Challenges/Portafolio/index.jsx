@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Button } from "@mui/material";
-import FormularioPortafolio from "../../Componentes/Formulario";
+import FormularioPortafolio from "./fornulario";
+
 
 //Imgs
 import Vector from "../../Assets/Imagenes/Portafolio/vector.png"
@@ -76,6 +77,7 @@ const PortafolioHeader = styled.header`
     display: flex;
 `
 const PortafolioHeaderImg = styled.img`
+        filter: ${({theme}) => theme.filter};
         height: 1.5rem;
         margin: 0.3rem 1rem 0 0;
 `
@@ -165,6 +167,9 @@ const PortafolioTituloA = styled.a`
     @media screen and (max-width: 768px) { 
         font-size: 0.9rem;
     }
+`
+const PortafolioTituloVector = styled.img`
+    filter: ${({theme}) => theme.filter};
 `
 const PortafolioSobre = styled.section`
     padding: 2rem;
@@ -367,14 +372,6 @@ const PortafolioExperienciaTexto = styled.h3`
 const PortafolioExperienciaDescripcion = styled.a`
     padding: 2rem;
 `
-const PortafolioExperienciaBoton =styled.button`
-    background-color: ${({theme}) => theme.body};
-    color: ${({theme}) => theme.text};
-    border-radius: 1rem;
-    border: 1px solid;
-    padding: 1.25rem;
-    cursor: pointer;
-`
 const PortafolioContacto = styled.section`
     background-color: ${({theme}) => theme.body};
     border-radius: 5rem;
@@ -441,10 +438,10 @@ const Portafolio = () => {
                             <PortafolioTituloBio>Hola, mi nombre es Alexander Oria y construyo paginas web </PortafolioTituloBio>
                             <PortafolioTituloBio2>Soy formado en .... lorem ipsum sit amet consectetur y actualmente estoy participando del proyecto Oracle ONE en Alura Latam.</PortafolioTituloBio2>
                             <PortafolioTituloNav>
-                                <li ><PortafolioTituloA target="_blank" href="">Github <img src={Flecha} alt="flecha"/> </PortafolioTituloA></li>
-                                <li ><PortafolioTituloA target="_blank" href="">Linkedin <img src={Flecha} alt="flecha"/></PortafolioTituloA></li>
-                                <li ><PortafolioTituloA target="_blank" href="">Instagram <img src={Flecha} alt="flecha"/></PortafolioTituloA></li>
-                                <li ><PortafolioTituloA target="_blank" href="">Currículo <img src={Flecha} alt="flecha"/></PortafolioTituloA></li>
+                                <li ><PortafolioTituloA target="_blank" href="">Github <PortafolioTituloVector src={Flecha} alt="flecha"/> </PortafolioTituloA></li>
+                                <li ><PortafolioTituloA target="_blank" href="">Linkedin <PortafolioTituloVector src={Flecha} alt="flecha"/></PortafolioTituloA></li>
+                                <li ><PortafolioTituloA target="_blank" href="">Instagram <PortafolioTituloVector src={Flecha} alt="flecha"/></PortafolioTituloA></li>
+                                <li ><PortafolioTituloA target="_blank" href="">Currículo <PortafolioTituloVector src={Flecha} alt="flecha"/></PortafolioTituloA></li>
                             </PortafolioTituloNav>
                         </div>
                     </PortafolioTituloDiv>
