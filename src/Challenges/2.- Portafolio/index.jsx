@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { Button } from "@mui/material";
 import FormularioPortafolio from "./fornulario";
 
-
 //Imgs
 import Vector from "../../Assets/Imagenes/Portafolio/vector.png"
 import Perfil from "../../Assets/Imagenes/Portafolio/profile.png"
@@ -29,83 +28,62 @@ import Xp3 from "../../Assets/Imagenes/Portafolio/secretcode_print.png"
 import Xp4 from "../../Assets/Imagenes/Portafolio/forca2_print.png"
 import Contacto from "../../Assets/Imagenes/Portafolio/contact_image.png"
 
-
-
 const  manejarCambio = (valores) => {
     console.log("Portafolio: ", valores)
 }
 
-
 const ProtafolioContenedor = styled.div`
     background-color: ${({theme}) => theme.body};
-    min-width: 90vw;
-    min-height: 90vh;
-    padding: 2vh 1vw;
+    font-family: "Raleway";
+    display: flex;
+
 `
 const ProtafolioMain = styled.main`
-    font-family: "Raleway";
-    font-weight: 400;
-    font-size: 1.5rem;
-    line-height: 150%;
     color: ${({theme}) => theme.text};
     background-color: ${({theme}) => theme.inside};
-    height: auto;
-    max-width: 95vw;
-    margin: 3.3vh ;
-    padding: 6vh 6vw;
-    border-radius: 0.5rem;
-    box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.4);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    @media screen and (max-width: 425px) {
-
-    }
-    @media screen and (max-width: 768px) {
-    }
-    @media (max-width: 1200px) {
-
-    }
+    width: 92vw;
+    margin: 1rem 0.75rem;
+    padding: 1rem 1rem;
+    border-radius: 1.5rem;
+    box-shadow: 0.5rem 0.5rem 0.25rem 0  rgba(0, 0, 0, 0.4);
 `
 const PortafolioMenu = styled.section`
     display: flex;
     justify-content: space-between;
-    padding: 0.5rem 1rem 0 1rem;
     margin-bottom: 2vh;
 `
 const PortafolioHeader = styled.header`
     display: flex;
 `
 const PortafolioHeaderImg = styled.img`
-        filter: ${({theme}) => theme.filter};
-        height: 1.5rem;
-        margin: 0.3rem 1rem 0 0;
+    filter: ${({theme}) => theme.filter};
+    width: 10%;
+    margin-right: 0.25rem;
 `
-const PortafolioNav = styled.ul`
-    display: flex;
-    text-align: center;
-    flex-direction: row;
-    gap: 2rem;
+const PortafolioNombre = styled.h3`
+    font-size: 0.85rem;
+`
+const PortafolioNavegador = styled.nav`
+    font-size: 0.65rem;
+`
+const PortafolioUl = styled.ul`
+
 `
 const PortafolioLista = styled.li`
-    @media screen and (max-width: 768px) {
-        display: none;        
+    display: none;
+    @media screen and (min-width: 1024px) {
+        display: block;
     }  
 `
 const PortafolioListaContacto = styled.li`
+    @media screen and (min-width: 768px) { 
+        font-weight: bold;    
+    }
+    @media screen and (min-width: 1024px) { 
         display: none;
-
-        @media screen and (max-width: 768px) { 
-            display: inline-block;
-            font-weight: bold;
-        }
-
-        @media screen and (max-width: 425px) {
-            font-weight: 500;
-        
-        }
+    }
 `
-const PortafolioListaA = styled.a`
+const PortafolioListaItem = styled.a`
     color: ${({theme}) => theme.text};
     :hover{
     text-decoration: underline;
@@ -113,37 +91,36 @@ const PortafolioListaA = styled.a`
 `
 const PortafolioTitulo = styled.section`
     background-color: ${({theme}) => theme.body};
-    border-radius: 5rem;
+    border-radius: 1.5rem;
 `
 const PortafolioTituloDiv = styled.div`
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    @media screen and (min-width: 784px) {
     flex-direction: row-reverse;
     align-items: center;
-    padding: 2rem;
-    @media screen and (max-width: 425px) {
-        flex-direction: column;
-        align-items: flex-start;
     }
 `
 const PortafolioTituloImg = styled.img`
-    width: 18rem;
-    
-    @media screen and (max-width: 768px) { 
+    width: 8rem;
+    margin-bottom: 1rem;
+    @media screen and (min-width: 768px) { 
         width: 12rem;
     }
-    @media screen and (max-width: 425px) {
-        width: 8rem;
-        margin-bottom: 1rem;
+    @media screen and (min-width: 1024px) {
+        width: 18rem;
     }
 `
 const PortafolioTituloBio = styled.h2`
-    font-size: 2.5rem;
+    font-size: 1rem;
 
-    @media screen and (max-width: 768px) {
-        font-size: 1.8rem;
-    }
-    @media screen and (max-width: 425px) {
+    @media screen and (min-width: 768px) {
         font-size: 1.5rem;
+    }
+    @media screen and (min-width: 1024px) {
+        font-size: 2rem;
     }   
 `
 const PortafolioTituloBio2 = styled.h3`
@@ -416,19 +393,19 @@ const Portafolio = () => {
                 <PortafolioMenu>
                     <PortafolioHeader>
                         <PortafolioHeaderImg src={Vector} alt="Estrella" />
-                        <h3>Alexander Oria</h3>
+                        <PortafolioNombre>Alexander Oria</PortafolioNombre>
                     </PortafolioHeader>
-                    <nav>
-                        <PortafolioNav>
-                            <PortafolioLista><PortafolioListaA href="#sobre-mi"> Sobre mi </PortafolioListaA></PortafolioLista>
-                            <PortafolioLista><PortafolioListaA href="#skills"> Skills </PortafolioListaA></PortafolioLista>
-                            <PortafolioLista><PortafolioListaA href="#hobbies" >Hobbies </PortafolioListaA></PortafolioLista>
-                            <PortafolioLista><PortafolioListaA href="#formacion"> Formación </PortafolioListaA></PortafolioLista>
-                            <PortafolioLista><PortafolioListaA href="#xp"> Proyectos </PortafolioListaA></PortafolioLista>
-                            <PortafolioLista><PortafolioListaA href="#contacto"> Contacto@fulana.com </PortafolioListaA></PortafolioLista>
-                            <PortafolioListaContacto><PortafolioListaA href="#contacto"> contacto@fulana.com </PortafolioListaA></PortafolioListaContacto>
-                        </PortafolioNav>            
-                    </nav>
+                    <PortafolioNavegador>
+                        <PortafolioUl>
+                            <PortafolioLista><PortafolioListaItem href="#sobre-mi"> Sobre mi </PortafolioListaItem></PortafolioLista>
+                            <PortafolioLista><PortafolioListaItem href="#skills"> Skills </PortafolioListaItem></PortafolioLista>
+                            <PortafolioLista><PortafolioListaItem href="#hobbies" >Hobbies </PortafolioListaItem></PortafolioLista>
+                            <PortafolioLista><PortafolioListaItem href="#formacion"> Formación </PortafolioListaItem></PortafolioLista>
+                            <PortafolioLista><PortafolioListaItem href="#xp"> Proyectos </PortafolioListaItem></PortafolioLista>
+                            <PortafolioLista><PortafolioListaItem href="#contacto"> Contacto@fulana.com </PortafolioListaItem></PortafolioLista>
+                            <PortafolioListaContacto><PortafolioListaItem href="#contacto"> contacto@fulana.com </PortafolioListaItem></PortafolioListaContacto>
+                        </PortafolioUl>            
+                    </PortafolioNavegador>
                 </PortafolioMenu>
 
                 <PortafolioTitulo>

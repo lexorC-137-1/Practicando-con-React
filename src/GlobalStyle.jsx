@@ -16,3 +16,18 @@ const GlobalStyle = createGlobalStyle`
     }
 `
 export default GlobalStyle;
+
+/*
+    @media screen and (min-width: 320px) {
+    
+    }
+    @media screen and (min-width: 375px){
+
+    }
+    @media screen and (min-width: 768px) {
+    
+    }
+    @media (min-width: 1024px) {
+
+    }
+*/

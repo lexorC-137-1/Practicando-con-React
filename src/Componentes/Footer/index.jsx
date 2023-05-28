@@ -1,30 +1,56 @@
-import React from "react";
 import styled from "styled-components";
+//Img
+import Facebook from "../../Assets/Imagenes/Footer/facebook.png"
+import Instagram from "../../Assets/Imagenes/Footer/instagram.png"
+import Twiter from "../../Assets/Imagenes/Footer/twitter.png"
 
-
-const FooterSection = styled.section`
+const Contenedor = styled.footer`
     background-color: ${({theme}) => theme.inside};
-    color: ${({theme}) => theme.text};
-    padding: 2rem;
-    text-align: center;
+    height: 4.75rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.5rem;
 `
-const FooterDiv = styled.div`
-
-
+const Redes = styled.div`
+    background-color: ${({theme}) => theme.body};
+    border-radius: 2rem;
+    padding: 0.15rem;
 `
-const FooterParrafo = styled.p`
+const RedesEnlace = styled.a`
     
+`
+const RedesImg = styled.img`
+    filter: ${({theme}) => theme.filter};
+    padding: 1vh 1vw;
+`
+const FooterImg = styled.img`
+    
+`
+const FooterDesarrollador = styled.strong`
+    color: ${({theme}) => theme.text};
+    font-size: 1rem;
+    @media screen and (min-width: 768px) {
+        font-size: 1.5rem;
+    }
 `
 
 const Foorter = () => {
     return (
-        <FooterSection >
-            <FooterDiv >
-                <FooterParrafo>Desarrollado por Lex Oria</FooterParrafo>
-                <FooterParrafo>2023</FooterParrafo>
-            </FooterDiv>
-        </FooterSection>
+        <Contenedor>
+            <Redes>
+                <RedesEnlace href="https://www.aluracursos.com/"><RedesImg src={Facebook} /></RedesEnlace>
+                <RedesEnlace href="https://www.aluracursos.com/"><RedesImg src={Instagram} /></RedesEnlace>
+                <RedesEnlace href="https://www.aluracursos.com/"><RedesImg src={Twiter} /></RedesEnlace>
+            </Redes>
+            <FooterImg />
+            <FooterDesarrollador>Desarrollado por Lexor</FooterDesarrollador>
+        </Contenedor>
     )
 }
 
 export default Foorter;
+
+
+
