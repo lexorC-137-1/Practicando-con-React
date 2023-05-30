@@ -27,8 +27,8 @@ function App() {
         <BtnTema onClick={activadorTema}>
           <CambioTema  tema={tema} />
         </BtnTema>
-        <Header />      
-        <Routes>        
+        <Header />
+        <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/encriptador" element={<Encriptador />} />
             <Route path="/portafolio" element={<Portafolio />} />
