@@ -39,10 +39,14 @@ const EncriptadorContenido = styled.div`
 `
 const EncriptadorImg = styled.img`
     filter: ${({theme}) => theme.filter};
-    width: 10%;
-    padding-bottom: 5vh;
+    width: 6%;
+    padding: 0 0 5rem 0;
     @media screen and (min-width: 768px){
-        width: 5%;
+        width: 6%;
+        padding: 1rem 0 5rem 1rem;
+    }
+    @media screen and (min-width: 1024px) {
+        width: 10%;
     }
 `
 const EncriptadorEntrada = styled(Input.TextArea)`
@@ -56,6 +60,10 @@ const EncriptadorEntrada = styled(Input.TextArea)`
     }
     @media screen and (min-width: 768px) {
         font-size: 2rem;
+        padding-left: 5rem;
+    }
+    @media screen and (min-width: 1024px) {
+        padding-left: 3rem;
     }
 `
 const EncriptadorAlerta = styled(Space)`
@@ -90,7 +98,7 @@ const EncriptadorBtnEncriptar = styled(Button)`
     color: white;
     cursor:pointer;
     min-width: 70vw;
-    height: 5vh;
+    height: 7vh;
     :hover{
 
     }
@@ -107,7 +115,7 @@ const EncriptarBtnDesencriptar = styled(Button)`
     color: #0a3871;
     cursor:pointer;
     min-width: 70vw; 
-    height: 5vh;
+    height: 7vh;
     :hover{
 
     }
@@ -138,42 +146,43 @@ const EncriptadorContP = styled.div`
     background-color: ${({theme}) => theme.inside};
     border-radius: 2rem;
     width: 70vw;
-    height: 24vh;
+    height: 25vh;
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding: 1.5rem 1.5rem;
     margin: 1.5rem 1.5rem ;
     @media screen and (min-width: 1024px) {
         width: 35vw;
-        height: 20vh;
-        margin-top: 3vh;
+    }
+    @media screen and (min-width: 1198px) {
+        width: 35vw;
+        height: 35vh;
     }
 
 `
 const EncriptadorTituloMensaje = styled.h2`
     color: ${({theme}) => theme.text};
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 700;
     line-height: 120%;
     margin-bottom: 0.5rem;
+
     @media screen and (min-width: 768px) {
         font-size: 2rem;
-        margin-bottom: 1rem;
-    }
-    @media screen and (min-width: 1024px) {
-        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
     }
 `
 const EncriptadorParrafo = styled.p`
     color: ${({theme}) => theme.text};
-    font-size: 1rem;
+    font-size: .8rem;
     font-weight: 400;
     line-height: 150%;
     @media screen and (min-width: 768px) {
-        font-size: 1.5rem;
-    }
-    @media screen and (min-width: 768px) {
         font-size: 1rem;
+    }
+    @media screen and (min-width: 1024px) {
+        font-size: 1.5rem;
     }
 `
 const EncriptadorSalida = styled(Input.TextArea)`
@@ -195,7 +204,7 @@ const EncriptadorBtnCopiar = styled(Button)`
     color: #0a3871;
     cursor: pointer;
     width: 70vw;
-    height: 5vh;
+    height: 7vh;
     @media (min-width: 1024px) {
         width: 15vw;
         margin-top: 4rem;
@@ -206,7 +215,7 @@ const EncriptadorBtnCopiar = styled(Button)`
 
 const Encriptador = () => {
     const [entrada, setEntrada] = useState("");
-    const [salida, setSalida] = useState("");
+    //const [salida, setSalida] = useState("");
 
     
 

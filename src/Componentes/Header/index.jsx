@@ -6,13 +6,22 @@ const HeatherContenedor = styled.header`
     background-color: ${({theme}) => theme.inside};
     min-height: 3rem;
     padding: 1rem 1rem;
+    @media screen and (min-width: 768px) {
+        min-height: 4.75rem;
+    }
 `
 const HeaderContenido = styled.div`
 
 `
 const MenuHeather = styled.nav`
-    font-size: .60rem;
+    font-size: .55rem;
     font-weight: bold;
+    @media screen and (min-width: 375px){
+    font-size: .60rem;
+    }
+    @media screen and (min-width: 768px) {
+        font-size: 1rem;
+    }
 `
 const MenuHeaderItems = styled.ul`
     display: flex;

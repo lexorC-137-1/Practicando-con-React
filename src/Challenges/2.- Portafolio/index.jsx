@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Button } from "@mui/material";
-import FormularioPortafolio from "./fornulario";
+import FormularioPortafolio from "./Componentes/formulario";
 
 //Imgs
 import Vector from "../../Assets/Imagenes/Portafolio/vector.png"
@@ -32,49 +32,62 @@ const  manejarCambio = (valores) => {
     console.log("Portafolio: ", valores)
 }
 
-const ProtafolioContenedor = styled.div`
+const PrtfContenedor = styled.section`
     background-color: ${({theme}) => theme.body};
     font-family: "Raleway";
     display: flex;
 `
-const ProtafolioMain = styled.main`
+const PrtfMain = styled.main`
     color: ${({theme}) => theme.text};
     background-color: ${({theme}) => theme.inside};
-    width: 92vw;
-    margin: 1rem 0.75rem;
-    padding: 1rem 1rem;
+    width: 95vw;
+    margin: 2vh 2vw;
+    padding: 2vh 2vw;
     border-radius: 1.5rem;
     box-shadow: 0.5rem 0.5rem 0.25rem 0  rgba(0, 0, 0, 0.4);
 `
-const PortafolioMenu = styled.section`
+const PrtfMenu = styled.div`
     display: flex;
     justify-content: space-between;
     margin-bottom: 2vh;
 `
-const PortafolioHeader = styled.header`
+const PrtfHeader = styled.header`
     display: flex;
 `
-const PortafolioHeaderImg = styled.img`
+const PrtfHeaderImg = styled.img`
     filter: ${({theme}) => theme.filter};
     width: 10%;
     margin-right: 0.25rem;
+    @media screen and (min-width: 768px) {
+        width: 15%;
+    }
 `
-const PortafolioNombre = styled.h3`
+const PrtfNombre = styled.h3`
     font-size: 0.85rem;
+    @media screen and (min-width: 768px) {
+        font-size: 1rem;
+    }
 `
-const PortafolioNavegador = styled.nav`
+const PrtfNavegador = styled.nav`
     font-size: 0.65rem;
+    @media screen and (min-width: 768px) {
+        font-size: 1rem;
+    }
 `
-const PortafolioUl = styled.ul`
-
+const PrtfUl = styled.ul`
+    @media screen and (min-width: 1024px) {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    }
 `
-const PortafolioLista = styled.li`
+const PrtfLista = styled.li`
     display: none;
     @media screen and (min-width: 1024px) {
         display: block;
     }  
 `
-const PortafolioListaContacto = styled.li`
+const PrtfListaContacto = styled.li`
     @media screen and (min-width: 768px) { 
         font-weight: bold;    
     }
@@ -82,17 +95,17 @@ const PortafolioListaContacto = styled.li`
         display: none;
     }
 `
-const PortafolioListaItem = styled.a`
+const PrtfListaItem = styled.a`
     color: ${({theme}) => theme.text};
     :hover{
     text-decoration: underline;
 }
 `
-const PortafolioTitulo = styled.section`
+const PrtfTitulo = styled.section`
     background-color: ${({theme}) => theme.body};
     border-radius: 1.5rem;
 `
-const PortafolioTituloContenido = styled.div`
+const PrtfTituloContenido = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -102,7 +115,7 @@ const PortafolioTituloContenido = styled.div`
     align-items: center;
     }
 `
-const PortafolioTituloImg = styled.img`
+const PrtfTituloImg = styled.img`
     width: 8rem;
     margin-bottom: 1rem;
     @media screen and (min-width: 768px) { 
@@ -112,10 +125,10 @@ const PortafolioTituloImg = styled.img`
         width: 18rem;
     }
 `
-const PortafolioTituloBox = styled.div`
+const PrtfTituloBox = styled.div`
     width: 80vw;
 `
-const PortafolioTituloBio = styled.h2`
+const PrtfTituloBio = styled.h2`
     font-size: 1rem;
 
     @media screen and (min-width: 768px) {
@@ -125,7 +138,7 @@ const PortafolioTituloBio = styled.h2`
         font-size: 2rem;
     }   
 `
-const PortafolioTituloBio2 = styled.h3`
+const PrtfTituloBio2 = styled.h3`
     font-size: 1.3rem;
     font-weight: lighter;
     margin-right: 1.5vw;
@@ -133,31 +146,36 @@ const PortafolioTituloBio2 = styled.h3`
         font-size: 1rem;
     }
 `
-const PortafolioTituloNav = styled.ul`
+const PrtfTituloNav = styled.ul`
     display: flex;
-    gap: 0.6rem;
+    gap: .5rem;
     margin-top: 1.5vh;
 `
-const PortafolioTituloLista = styled.li`
+const PrtfTituloLista = styled.li`
     
 `
-const PortafolioTituloA = styled.a`
+const PrtfTituloA = styled.a`
     color: ${({theme}) => theme.text};
-    font-size: 0.8rem;
+    font-size: .6rem;
 
     :hover{
         text-decoration: underline;
     }
-    @media screen and (max-width: 768px) { 
+    @media screen and (min-width: 768px) { 
+        font-size: 1rem;
     }
 `
-const PortafolioTituloVector = styled.img`
+const PrtfTituloVector = styled.img`
     filter: ${({theme}) => theme.filter};
+    width: 15%;
+    @media screen and (min-width: 768px) { 
+        width: 10%;
+    }
 `
-const PortafolioSobre = styled.section`
+const PrtfSobre = styled.section`
     padding: 2rem;
 `
-const PortafolioSobreContenedor = styled.div`
+const PrtfSobreContenedor = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;  
@@ -165,149 +183,186 @@ const PortafolioSobreContenedor = styled.div`
         width: 70%;
     }
 `
-const PortafolioSobreTitulo = styled.h3`
+const PrtfSobreTitulo = styled.h3`
     font-size: 1.5rem;
     @media screen and (min-width: 768px) { 
         font-size: 2rem;
     }
 `
-const PortafolioSobreParrafo = styled.p`
+const PrtfSobreParrafo = styled.p`
     font-size: 1rem;
     @media screen and (min-width: 768px) { 
         font-size: 1.5rem;
     }
 `
-const PortafolioSobreImg = styled.img`
+const PrtfSobreImg = styled.img`
     width: 10rem;
     margin-top: 1rem;
 `
-const PortafolioHabilidades = styled.section`
+const PrtfHabilidades = styled.section`
     background-color: ${({theme}) => theme.body};
     border-radius: 1.5rem;
+    padding: 1vh 1vw;
     display: flex;
     flex-direction: column;
 `
-const PortafolioHabilidadesTitulo = styled.h3`
+const PrtfHabilidadesTitulo = styled.h3`
     font-size: 2rem;
-    margin: 1rem;
-    padding-left: 3rem;
+    align-self: center;
+    margin: 2vh 0;
 `
-const PortafolioHabilidadesDiv = styled.div`
-    height: 60vh;
-    margin-left: 1rem;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    @media screen and (min-width: 1024px) {
-    flex-direction: row;
-    justify-content: space-between;
-    }
-`
-const PortafolioHabilidadesBox = styled.div`
-    background-color: ${({theme}) => theme.inside};
-    border-radius: .5rem;
-    width: 8rem;
-    height: 6rem;
-    margin-right: 0.5rem;
-    margin-bottom: 0.5rem;
-    @media screen and (min-width: 768px) { 
-
-    }
-    @media screen and (min-width: 1024px) {
-
-    }
-`
-const PortafolioHabilidadesLista = styled.ul`
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-`
-const PortafolioHabilidadesListaImg = styled.li`
-    padding: 3rem 1rem 0;
-`
-const PortafolioHabilidadesImagen = styled.img`
-    width: 70%;
-`
-const PortafolioHabilidadesNombre = styled.li`
-   font-weight: bold;
-   padding-left: 1rem;
-`
-const PortafolioPasatiempo = styled.section`
-    padding: 2rem 0;
-    display: flex;
-    flex-direction: column;
-`
-const PortafolioPasatiempoTitulo = styled.h3`
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-`
-const PortafolioPasatiempoLinea = styled.div`
-    height: 50vh;
+const PrtfHabilidadesDiv = styled.div`
+    height: 55vh;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
-    gap: 1rem;
-`
-const PortafolioPasatiempoCaja = styled.div`
-    background-color: ${({theme}) => theme.body};
-    border-radius: 1rem;
-    width: 6rem;
-    height: 7rem;
-    display: flex;
-    @media screen and (min-width: 768px) { 
-
+    @media screen and (min-width: 768px) {
+        height: 35vh;
     }
     @media screen and (min-width: 1024px) {
-
+        height: 20vh;
+        flex-direction: row;
     }
 `
-const PortafolioPasatiempoLista = styled.ul`
+const PrtfHabilidadesBox = styled.div`
+    background-color: ${({theme}) => theme.inside};
+    border-radius: .5rem;
+    width: 100px;
+    height: 80px;
+    margin: 1vh 1vw;
+    @media screen and (min-width: 768px) {
+        width: 130px;
+        height: 100px;
+    }
+    @media screen and (min-width: 1024px) {
+        height: 120px;
+    }
+`
+const PrtfHabilidadesLista = styled.ul`
+    display: flex;
+    flex-direction: column;
+    padding-top: 5vh;
+`
+const PrtfHabilidadesListaImg = styled.li`
+    padding-left: 1.5vw;
+`
+const PrtfHabilidadesImagen = styled.img`
+    filter: ${({theme}) => theme.filter};
+    width: 15%;
+`
+const PrtfHabilidadesImagen2 = styled.img`
+    filter: ${({theme}) => theme.filter};
+    width: 25%;
+`
+const PrtfHabilidadesNombre = styled.li`
+   font-weight: bold;
+   padding-left: 1vw;
+   @media screen and (min-width: 1024px) { 
+        font-size: 1.5rem;
+    }
+`
+const PrtfPasatiempo = styled.section`
+    padding: 2vh 2vw;
+    display: flex;
+    flex-direction: column;
+`
+const PrtfPasatiempoTitulo = styled.h3`
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    align-self: center;
+`
+const PrtfPasatiempoLinea = styled.div`
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+    @media screen and (min-width: 768px) {
+        height: 50vh;
+    }
+    @media screen and (min-width: 1024px) {
+        height: 25vh;
+        flex-direction: row;
+    }
+`
+const PrtfPasatiempoCaja = styled.div`
+    background-color: ${({theme}) => theme.body};
+    border-radius: 1rem;
+    width: 25vw;
+    height: 20vh;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    @media screen and (min-width: 768px) {
+        width: 20vw;
+    }
+    @media screen and (min-width: 1024px) {
+        width: 13vw;
+        height: 18vh;
+    }
+`
+const PrtfPasatiempoLista = styled.ul`
 
 `
-const PortafolioPasatiempoListaImagen = styled.li`
-    
-`
-const PortafolioPasatiempoImg = styled.img`
-   padding-top: 1rem;
-   padding-left: 2rem;
-`
-const PortafolioPasatiempoNombre = styled.li`
-    margin-top: 0.75rem;
-    padding-left: 0.75rem;
-    font-weight: bold;
+const PrtfPasatiempoListaImagen = styled.li`
     display: flex;
+    justify-content: center;
+    @media screen and (min-width: 768px) { 
+        padding-top: 3vh;
+    }
 `
-const PortafolioEstudios = styled.section`
-background-color: ${({theme}) => theme.body};
-border-radius: 1.5rem;
-padding: 2rem;
-text-align: center;
+const PrtfPasatiempoImg = styled.img`
+    filter: ${({theme}) => theme.filter};
+    width: 40%;
+    padding-top: 1rem;
+    @media screen and (min-width: 768px) { 
+        width: 50%;
+    }
 `
-const PortafolioEstudiosTitulo = styled.h2`
+const PrtfPasatiempoListaNombre = styled.li`
+    font-size: 1rem;
+    font-weight: bold;
+`
+const PrtfPasatiempoNombre = styled.p`
+    padding-left: .5rem;
+    margin-top: .5rem;
+        @media screen and (min-width: 1024px) { 
+        font-size: 1.5rem;
+    }
+`
+const PrtfEstudios = styled.section`
+    background-color: ${({theme}) => theme.body};
+    border-radius: 1.5rem;
+    padding: 2vh;
+    text-align: center;
+`
+const PrtfEstudiosTitulo = styled.h2`
     font-size: 2rem;
     margin-bottom: 1.5rem;
 `
-const PortafolioEstudiosCursos = styled.div`
-   display: flex;
-   flex-direction: column;
-    @media screen and (min-width: 1024px) {
-        justify-content: space-around;
+const PrtfEstudiosCursos = styled.div`
+    display: flex;
+    flex-direction: column;
+    @media screen and (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-around;
    }   
 `
-const PortafolioEstudiosCaja = styled.div`
+const PrtfEstudiosCaja = styled.div`
     width: 100%;
-    @media screen and (min-width: 1024px) {
-    width: 25%;
-    }  
+    margin-top: 1vh;
+    @media screen and (min-width: 768px) {
+    width: 30%;
+    }
 `
-const PortafolioEstudiosCajaUl = styled.ul`
+const PrtfEstudiosCajaUl = styled.ul`
     
 `
-const PortafolioEstudiosCajaLista = styled.li`
+const PrtfEstudiosCajaLista = styled.li`
     
 `
-const PortafolioEstudiosImg = styled.img`
+const PrtfEstudiosImg = styled.img`
     background-color: ${({theme}) => theme.inside};
     border-radius: 1rem;
     padding: 2rem;
@@ -319,105 +374,97 @@ const PortafolioEstudiosImg = styled.img`
     display: block;
     }
 `
-const PortafolioEstudiosTexto = styled.h3`
-    
+const PrtfEstudiosTexto = styled.h3`
+
 `
-const PortafolioEstudiosParrafo = styled.p`
-    
+const PrtfEstudiosParrafo = styled.p`
+
 `
-const PortafolioExperiencia = styled.section`
-    padding: 2rem 0;
+const PrtfExperiencia = styled.section`
+    margin: 2vh 1.5vw;
 `
-const PortafolioExperienciaTitulo = styled.h2`
+const PrtfExperienciaTitulo = styled.h2`
     font-size: 2rem;
     margin-bottom: 1.5rem;
     text-align: center;
 `
-const PortafolioExperienciaCaja = styled.div`
-    width: 75vw;
-    gap: 1rem;
-    margin: 1.5rem;
-    @media screen and (min-width: 768px) { 
+const PrtfExperienciaCaja = styled.div`
+    margin: 2vh 0;
     display: flex;
-    align-items: center;
     flex-direction: column;
     align-items: flex-start;
-    :nth-child(3),:nth-child(5){
-        flex-direction: column;
-        }
-    }
     @media screen and (min-width: 1024px) { 
-    :nth-child(3),:nth-child(5){
-        flex-direction: row-reverse;
+        flex-direction: row;
+        :nth-child(3),:nth-child(5){
+            flex-direction: row-reverse;
         }
     }
 `
-const PortafolioExperienciaImg = styled.img`
+const PrtfExperienciaImg = styled.img`
     width: 100%;
-    @media screen and (min-width: 768px) { 
+    @media screen and (min-width: 1024px) { 
+        width: 60%;
+    }
+`
+const PrtfExperienciaContenedor = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin: 1vh 1vw;
+`
+const PrtfExperienciaContenedorTitulo = styled.h2`
+    font-size: 1.25rem;
+`
+const PrtfExperienciaContenedorTexto = styled.h3`
+    font-weight: normal;
+    font-size: .75rem;
+`
+const PrtfExperienciaContenedorBtn= styled.div`
+margin-top: 1vh;
+display: flex;
+`
+const PrtfExperienciaSpan = styled.span`
+
+`
+const PrtfExperienciaDescripcion = styled.a`
+    margin-right: 2vw;
+`
+const PrtfExperienciaBtn1 = styled(Button)`
+    filter: ${({theme}) => theme.filter};
+    width: 7.5rem;
+`
+const PrtfExperienciaBtn2 = styled(Button)`
+    filter: ${({theme}) => theme.filter};
+    width: 7.5rem;
+`
+const PrtfContacto = styled.section`
+    background-color: ${({theme}) => theme.body};
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    margin-top: 2rem;
+`
+const PrtfContactoContenedor = styled.div`
+    display: flex;
+    gap: 1rem;
+`
+const PrtfContactoCajaIzquierda = styled.div`
+        display: none;
+    @media screen and (min-width: 1024px) { 
+        display: block;
         width: 70%;
     }
 `
-const PortafolioExperienciaContenedor = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+const PrtfContactoImg = styled.img`
+        border-radius: 1rem;
 `
-const PortafolioExperienciaContainerTitulo = styled.h2`
-    font-size: 1.2rem;
-`
-const PortafolioExperienciaTexto = styled.h3`
-    font-weight: normal;
-    font-size: 0.85rem;
-`
-const PortafolioExperienciaContenedorBtn= styled.div`
-    background-color: ${({theme}) => theme.body};
-    padding: .5rem;
-    border-radius: .5rem;
-    display: flex;
-    gap: 1rem;
-`
-const PortafolioExperienciaSpan = styled.span`
-    
-`
-const PortafolioExperienciaDescripcion = styled.a`
-
-`
-const PortafolioExperonciaBtn1 = styled(Button)`
-    
-`
-const PortafolioExperonciaBtn2 = styled(Button)`
-    
-`
-const PortafolioContacto = styled.section`
-    background-color: ${({theme}) => theme.body};
-    border-radius: 1.5rem;
-    padding: 2rem;
-`
-const PortafolioContactoContenedor = styled.div`
-    display: flex;
-    gap: 1rem;
-    padding-top: 2rem;
-`
-const PortafolioContactoCajaIzquierda = styled.div`
-        display: none;
-   @media screen and (min-width: 768px) { 
-        width: 45%;
-    }
-`
-const PortafolioContactoImg = styled.img`
-        width: 100%;
-        border-radius: 1.5rem;
-`
-const PortafolioContactoCajaDerecha = styled.div`
+const PrtfContactoCajaDerecha = styled.div`
     display: flex;
     flex-direction: column;
 `
-const PortafolioContactoTitulo = styled.h2`
+const PrtfContactoTitulo = styled.h2`
     font-size: 1.75rem;
     margin-bottom: 2vh;
 `
-const PortafolioContactoTexto = styled.h3`
+const PrtfContactoTexto = styled.h3`
     font-size: 1rem;
     font-weight: normal;
     margin-bottom: 3vh;
@@ -427,244 +474,256 @@ const PortafolioContactoTexto = styled.h3`
 const Portafolio = () => {
 
     return (         
-        <ProtafolioContenedor>
-            <ProtafolioMain>
+        <PrtfContenedor>
+            <PrtfMain>
 
-                <PortafolioMenu>
-                    <PortafolioHeader>
-                        <PortafolioHeaderImg src={Vector} alt="Estrella" />
-                        <PortafolioNombre>Alexander Oria</PortafolioNombre>
-                    </PortafolioHeader>
-                    <PortafolioNavegador>
-                        <PortafolioUl>
-                            <PortafolioLista><PortafolioListaItem href="#sobre-mi"> Sobre mi </PortafolioListaItem></PortafolioLista>
-                            <PortafolioLista><PortafolioListaItem href="#skills"> Skills </PortafolioListaItem></PortafolioLista>
-                            <PortafolioLista><PortafolioListaItem href="#hobbies" >Hobbies </PortafolioListaItem></PortafolioLista>
-                            <PortafolioLista><PortafolioListaItem href="#formacion"> Formación </PortafolioListaItem></PortafolioLista>
-                            <PortafolioLista><PortafolioListaItem href="#xp"> Proyectos </PortafolioListaItem></PortafolioLista>
-                            <PortafolioLista><PortafolioListaItem href="#contacto"> Contacto@fulana.com </PortafolioListaItem></PortafolioLista>
-                            <PortafolioListaContacto><PortafolioListaItem href="#contacto"> contacto@fulana.com </PortafolioListaItem></PortafolioListaContacto>
-                        </PortafolioUl>            
-                    </PortafolioNavegador>
-                </PortafolioMenu>
+                <PrtfMenu>
+                    <PrtfHeader>
+                        <PrtfHeaderImg src={Vector} alt="Estrella" />
+                        <PrtfNombre>Alexander Oria</PrtfNombre>
+                    </PrtfHeader>
+                    <PrtfNavegador>
+                        <PrtfUl>
+                            <PrtfLista><PrtfListaItem href="#sobre-mi"> Sobre mi </PrtfListaItem></PrtfLista>
+                            <PrtfLista><PrtfListaItem href="#skills"> Skills </PrtfListaItem></PrtfLista>
+                            <PrtfLista><PrtfListaItem href="#hobbies" >Hobbies </PrtfListaItem></PrtfLista>
+                            <PrtfLista><PrtfListaItem href="#formacion"> Formación </PrtfListaItem></PrtfLista>
+                            <PrtfLista><PrtfListaItem href="#xp"> Proyectos </PrtfListaItem></PrtfLista>
+                            <PrtfLista><PrtfListaItem href="#contacto"> Contacto@fulana.com </PrtfListaItem></PrtfLista>
+                            <PrtfListaContacto><PrtfListaItem href="#contacto"> contacto@fulana.com </PrtfListaItem></PrtfListaContacto>
+                        </PrtfUl>            
+                    </PrtfNavegador>
+                </PrtfMenu>
 
-                <PortafolioTitulo>
-                    <PortafolioTituloContenido>
-                        <PortafolioTituloImg src={Perfil} />
-                        <PortafolioTituloBox>
-                            <PortafolioTituloBio>Hola, mi nombre es Alexander Oria y construyo paginas web </PortafolioTituloBio>
-                            <PortafolioTituloBio2>Soy formado en .... lorem ipsum sit amet consectetur y actualmente estoy participando del proyecto Oracle ONE en Alura Latam.</PortafolioTituloBio2>
-                            <PortafolioTituloNav>
-                                <PortafolioTituloLista ><PortafolioTituloA target="_blank" href="">Github <PortafolioTituloVector src={Flecha} alt="flecha"/> </PortafolioTituloA></PortafolioTituloLista>
-                                <PortafolioTituloLista ><PortafolioTituloA target="_blank" href="">Linkedin <PortafolioTituloVector src={Flecha} alt="flecha"/></PortafolioTituloA></PortafolioTituloLista>
-                                <PortafolioTituloLista ><PortafolioTituloA target="_blank" href="">Instagram <PortafolioTituloVector src={Flecha} alt="flecha"/></PortafolioTituloA></PortafolioTituloLista>
-                                <PortafolioTituloLista ><PortafolioTituloA target="_blank" href="">Currículo <PortafolioTituloVector src={Flecha} alt="flecha"/></PortafolioTituloA></PortafolioTituloLista>
-                            </PortafolioTituloNav>
-                        </PortafolioTituloBox>
-                    </PortafolioTituloContenido>
-                </PortafolioTitulo>
+                <PrtfTitulo>
+                    <PrtfTituloContenido>
+                        <PrtfTituloImg src={Perfil} />
+                        <PrtfTituloBox>
+                            <PrtfTituloBio>Hola, mi nombre es Alexander Oria y construyo paginas web </PrtfTituloBio>
+                            <PrtfTituloBio2>Soy formado en .... lorem ipsum sit amet consectetur y actualmente estoy participando del proyecto Oracle ONE en Alura Latam.</PrtfTituloBio2>
+                            <PrtfTituloNav>
+                                <PrtfTituloLista ><PrtfTituloA target="_blank" href="">Github <PrtfTituloVector src={Flecha} alt="flecha"/> </PrtfTituloA></PrtfTituloLista>
+                                <PrtfTituloLista ><PrtfTituloA target="_blank" href="">Linkedin <PrtfTituloVector src={Flecha} alt="flecha"/></PrtfTituloA></PrtfTituloLista>
+                                <PrtfTituloLista ><PrtfTituloA target="_blank" href="">Instagram <PrtfTituloVector src={Flecha} alt="flecha"/></PrtfTituloA></PrtfTituloLista>
+                                <PrtfTituloLista ><PrtfTituloA target="_blank" href="">Currículo <PrtfTituloVector src={Flecha} alt="flecha"/></PrtfTituloA></PrtfTituloLista>
+                            </PrtfTituloNav>
+                        </PrtfTituloBox>
+                    </PrtfTituloContenido>
+                </PrtfTitulo>
                         
-                <PortafolioSobre>
-                    <PortafolioSobreContenedor>
-                        <PortafolioSobreTitulo>Sobre mi</PortafolioSobreTitulo>
-                        <PortafolioSobreParrafo>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque velit velit, volutpat semper dignissim dictum, imperdiet ut lacus. Quisque gravida ex a mattis pretium. Suspendisse potenti. Ut semper sagittis ligula et lacinia.  </PortafolioSobreParrafo>
-                        <PortafolioSobreParrafo>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque velit velit, volutpat semper dignissim dictum, imperdiet ut lacus. Quisque gravida ex a mattis pretium. Suspendisse potenti. Ut semper sagittis ligula et lacinia. Aenean sit amet felis venenatis, egestas metus vitae, aliquet metus.</PortafolioSobreParrafo>
-                        <PortafolioSobreImg src={Firma} alt="Firma" />
-                    </PortafolioSobreContenedor>
-                </PortafolioSobre>
+                <PrtfSobre>
+                    <PrtfSobreContenedor>
+                        <PrtfSobreTitulo>Sobre mi</PrtfSobreTitulo>
+                        <PrtfSobreParrafo>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque velit velit, volutpat semper dignissim dictum, imperdiet ut lacus. Quisque gravida ex a mattis pretium. Suspendisse potenti. Ut semper sagittis ligula et lacinia.  </PrtfSobreParrafo>
+                        <PrtfSobreParrafo>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque velit velit, volutpat semper dignissim dictum, imperdiet ut lacus. Quisque gravida ex a mattis pretium. Suspendisse potenti. Ut semper sagittis ligula et lacinia. Aenean sit amet felis venenatis, egestas metus vitae, aliquet metus.</PrtfSobreParrafo>
+                        <PrtfSobreImg src={Firma} alt="Firma" />
+                    </PrtfSobreContenedor>
+                </PrtfSobre>
 
-                <PortafolioHabilidades>
-                    <PortafolioHabilidadesTitulo>Habilidades</PortafolioHabilidadesTitulo>
-                    <PortafolioHabilidadesDiv>
-                        <PortafolioHabilidadesBox>
-                            <PortafolioHabilidadesLista>
-                                <PortafolioHabilidadesListaImg ><PortafolioHabilidadesImagen src={Html} alt="html5" /></PortafolioHabilidadesListaImg>
-                                <PortafolioHabilidadesNombre >HTML 5</PortafolioHabilidadesNombre>
-                            </PortafolioHabilidadesLista>
-                        </PortafolioHabilidadesBox>
+                <PrtfHabilidades>
+                    <PrtfHabilidadesTitulo>Habilidades</PrtfHabilidadesTitulo>
+                    <PrtfHabilidadesDiv>
+                        <PrtfHabilidadesBox>
+                            <PrtfHabilidadesLista>
+                                <PrtfHabilidadesListaImg ><PrtfHabilidadesImagen src={Html} alt="html5" /></PrtfHabilidadesListaImg>
+                                <PrtfHabilidadesNombre >HTML 5</PrtfHabilidadesNombre>
+                            </PrtfHabilidadesLista>
+                        </PrtfHabilidadesBox>
 
-                        <PortafolioHabilidadesBox>
-                            <PortafolioHabilidadesLista>
-                                <PortafolioHabilidadesListaImg ><PortafolioHabilidadesImagen src={Java} alt="java-scrip" /></PortafolioHabilidadesListaImg>
-                                <PortafolioHabilidadesNombre >Javascript</PortafolioHabilidadesNombre>
-                            </PortafolioHabilidadesLista>
-                        </PortafolioHabilidadesBox>
+                        <PrtfHabilidadesBox>
+                            <PrtfHabilidadesLista>
+                                <PrtfHabilidadesListaImg ><PrtfHabilidadesImagen src={Java} alt="java-scrip" /></PrtfHabilidadesListaImg>
+                                <PrtfHabilidadesNombre >Javascript</PrtfHabilidadesNombre>
+                            </PrtfHabilidadesLista>
+                        </PrtfHabilidadesBox>
 
-                        <PortafolioHabilidadesBox>
-                            <PortafolioHabilidadesLista>
-                                <PortafolioHabilidadesListaImg ><PortafolioHabilidadesImagen src={Php} alt="php" /></PortafolioHabilidadesListaImg>
-                                <PortafolioHabilidadesNombre >PHP</PortafolioHabilidadesNombre>
-                            </PortafolioHabilidadesLista>
-                        </PortafolioHabilidadesBox>
+                        <PrtfHabilidadesBox>
+                            <PrtfHabilidadesLista>
+                                <PrtfHabilidadesListaImg ><PrtfHabilidadesImagen src={Css} alt="css" /></PrtfHabilidadesListaImg>
+                                <PrtfHabilidadesNombre >CSS</PrtfHabilidadesNombre>
+                            </PrtfHabilidadesLista>
+                        </PrtfHabilidadesBox>
 
-                        <PortafolioHabilidadesBox>
-                            <PortafolioHabilidadesLista>
-                                <PortafolioHabilidadesListaImg ><PortafolioHabilidadesImagen src={Node} alt="node" /></PortafolioHabilidadesListaImg>
-                                <PortafolioHabilidadesNombre >Node JS</PortafolioHabilidadesNombre>
-                            </PortafolioHabilidadesLista>
-                        </PortafolioHabilidadesBox>
+                        <PrtfHabilidadesBox>
+                            <PrtfHabilidadesLista>
+                                <PrtfHabilidadesListaImg ><PrtfHabilidadesImagen2 src={Node} alt="node" /></PrtfHabilidadesListaImg>
+                                <PrtfHabilidadesNombre >Node JS</PrtfHabilidadesNombre>
+                            </PrtfHabilidadesLista>
+                        </PrtfHabilidadesBox>
 
-                        <PortafolioHabilidadesBox>
-                            <PortafolioHabilidadesLista>
-                                <PortafolioHabilidadesListaImg ><PortafolioHabilidadesImagen src={Reactjs} alt="react" /></PortafolioHabilidadesListaImg>
-                                <PortafolioHabilidadesNombre >React</PortafolioHabilidadesNombre>
-                            </PortafolioHabilidadesLista>
-                        </PortafolioHabilidadesBox>
+                        <PrtfHabilidadesBox>
+                            <PrtfHabilidadesLista>
+                                <PrtfHabilidadesListaImg ><PrtfHabilidadesImagen2 src={Php} alt="php" /></PrtfHabilidadesListaImg>
+                                <PrtfHabilidadesNombre >PHP</PrtfHabilidadesNombre>
+                            </PrtfHabilidadesLista>
+                        </PrtfHabilidadesBox>
 
-                        <PortafolioHabilidadesBox>
-                            <PortafolioHabilidadesLista>
-                                <PortafolioHabilidadesListaImg ><PortafolioHabilidadesImagen src={Css} alt="css" /></PortafolioHabilidadesListaImg>
-                                <PortafolioHabilidadesNombre >CSS</PortafolioHabilidadesNombre>
-                            </PortafolioHabilidadesLista>
-                        </PortafolioHabilidadesBox>
-                    </PortafolioHabilidadesDiv>
-                </PortafolioHabilidades>
+                        <PrtfHabilidadesBox>
+                            <PrtfHabilidadesLista>
+                                <PrtfHabilidadesListaImg ><PrtfHabilidadesImagen2 src={Reactjs} alt="react" /></PrtfHabilidadesListaImg>
+                                <PrtfHabilidadesNombre >React</PrtfHabilidadesNombre>
+                            </PrtfHabilidadesLista>
+                        </PrtfHabilidadesBox>
+                    </PrtfHabilidadesDiv>
+                </PrtfHabilidades>
 
-                <PortafolioPasatiempo>
-                    <PortafolioPasatiempoTitulo>Pasatiempos</PortafolioPasatiempoTitulo>
-                    <PortafolioPasatiempoLinea>
-                        <PortafolioPasatiempoCaja>
-                            <PortafolioPasatiempoLista>
-                                <PortafolioPasatiempoListaImagen><PortafolioPasatiempoImg src={Skate} /></PortafolioPasatiempoListaImagen>
-                                <PortafolioPasatiempoNombre> Patinaje</PortafolioPasatiempoNombre>
-                            </PortafolioPasatiempoLista>
-                        </PortafolioPasatiempoCaja>
+                <PrtfPasatiempo>
+                    <PrtfPasatiempoTitulo>Pasatiempos</PrtfPasatiempoTitulo>
+                    <PrtfPasatiempoLinea>
+                        <PrtfPasatiempoCaja>
+                            <PrtfPasatiempoLista>
+                                <PrtfPasatiempoListaImagen><PrtfPasatiempoImg src={Skate} /></PrtfPasatiempoListaImagen>
+                                <PrtfPasatiempoListaNombre>
+                                    <PrtfPasatiempoNombre>Patinaje</PrtfPasatiempoNombre>
+                                </PrtfPasatiempoListaNombre>
+                            </PrtfPasatiempoLista>
+                        </PrtfPasatiempoCaja>
 
-                        <PortafolioPasatiempoCaja>
-                            <PortafolioPasatiempoLista>
-                                <PortafolioPasatiempoListaImagen> <PortafolioPasatiempoImg src={Guitarra} alt="" /></PortafolioPasatiempoListaImagen>
-                                <PortafolioPasatiempoNombre>Tocar Guitarra</PortafolioPasatiempoNombre>
-                            </PortafolioPasatiempoLista>
-                        </PortafolioPasatiempoCaja>
+                        <PrtfPasatiempoCaja>
+                            <PrtfPasatiempoLista>
+                                <PrtfPasatiempoListaImagen> <PrtfPasatiempoImg src={Guitarra} alt="" /></PrtfPasatiempoListaImagen>
+                                <PrtfPasatiempoListaNombre>
+                                    <PrtfPasatiempoNombre>Tocar Guitarra</PrtfPasatiempoNombre>
+                                    </PrtfPasatiempoListaNombre>
+                            </PrtfPasatiempoLista>
+                        </PrtfPasatiempoCaja>
 
-                        <PortafolioPasatiempoCaja>
-                            <PortafolioPasatiempoLista>
-                                <PortafolioPasatiempoListaImagen> <PortafolioPasatiempoImg src={Tv} alt="" /></PortafolioPasatiempoListaImagen>
-                                <PortafolioPasatiempoNombre>Ver Séries</PortafolioPasatiempoNombre>
-                            </PortafolioPasatiempoLista>
-                        </PortafolioPasatiempoCaja>
+                        <PrtfPasatiempoCaja>
+                            <PrtfPasatiempoLista>
+                                <PrtfPasatiempoListaImagen> <PrtfPasatiempoImg src={Tv} alt="" /></PrtfPasatiempoListaImagen>
+                                <PrtfPasatiempoListaNombre>
+                                    <PrtfPasatiempoNombre>Ver Séries</PrtfPasatiempoNombre>
+                                    </PrtfPasatiempoListaNombre>
+                            </PrtfPasatiempoLista>
+                        </PrtfPasatiempoCaja>
 
-                        <PortafolioPasatiempoCaja>
-                            <PortafolioPasatiempoLista>
-                                <PortafolioPasatiempoListaImagen><PortafolioPasatiempoImg src={Musica} alt="" /></PortafolioPasatiempoListaImagen>
-                                <PortafolioPasatiempoNombre>Oir Música</PortafolioPasatiempoNombre>
-                            </PortafolioPasatiempoLista>
-                        </PortafolioPasatiempoCaja>
+                        <PrtfPasatiempoCaja>
+                            <PrtfPasatiempoLista>
+                                <PrtfPasatiempoListaImagen><PrtfPasatiempoImg src={Musica} alt="" /></PrtfPasatiempoListaImagen>
+                                <PrtfPasatiempoListaNombre>
+                                    <PrtfPasatiempoNombre>Oir Música</PrtfPasatiempoNombre> 
+                                    </PrtfPasatiempoListaNombre>
+                            </PrtfPasatiempoLista>
+                        </PrtfPasatiempoCaja>
 
-                        <PortafolioPasatiempoCaja>
-                            <PortafolioPasatiempoLista>
-                                <PortafolioPasatiempoListaImagen> <PortafolioPasatiempoImg src={Cocina} alt="" /> </PortafolioPasatiempoListaImagen>
-                                <PortafolioPasatiempoNombre>Cocinar</PortafolioPasatiempoNombre>
-                            </PortafolioPasatiempoLista>
-                        </PortafolioPasatiempoCaja>
+                        <PrtfPasatiempoCaja>
+                            <PrtfPasatiempoLista>
+                                <PrtfPasatiempoListaImagen> <PrtfPasatiempoImg src={Cocina} alt="" /> </PrtfPasatiempoListaImagen>
+                                <PrtfPasatiempoListaNombre>
+                                    <PrtfPasatiempoNombre>Cocinar</PrtfPasatiempoNombre>
+                                    </PrtfPasatiempoListaNombre>
+                            </PrtfPasatiempoLista>
+                        </PrtfPasatiempoCaja>
 
-                        <PortafolioPasatiempoCaja>
-                            <PortafolioPasatiempoLista>
-                                <PortafolioPasatiempoListaImagen> <PortafolioPasatiempoImg src={Foto} alt="" /> </PortafolioPasatiempoListaImagen>
-                                <PortafolioPasatiempoNombre>Tomar Fotos</PortafolioPasatiempoNombre>
-                            </PortafolioPasatiempoLista>
-                        </PortafolioPasatiempoCaja>
-                    </PortafolioPasatiempoLinea>
-                </PortafolioPasatiempo>
+                        <PrtfPasatiempoCaja>
+                            <PrtfPasatiempoLista>
+                                <PrtfPasatiempoListaImagen> <PrtfPasatiempoImg src={Foto} alt="" /> </PrtfPasatiempoListaImagen>
+                                <PrtfPasatiempoListaNombre>
+                                    <PrtfPasatiempoNombre>Tomar Fotos</PrtfPasatiempoNombre>
+                                    </PrtfPasatiempoListaNombre>
+                            </PrtfPasatiempoLista>
+                        </PrtfPasatiempoCaja>
+                    </PrtfPasatiempoLinea>
+                </PrtfPasatiempo>
 
-                <PortafolioEstudios>
-                            <PortafolioEstudiosTitulo>Formación académica</PortafolioEstudiosTitulo>
-                            <PortafolioEstudiosCursos>
-                                <PortafolioEstudiosCaja>
-                                    <PortafolioEstudiosCajaUl >
-                                        <PortafolioEstudiosCajaLista><PortafolioEstudiosImg src={Univ1} alt="logo" /></PortafolioEstudiosCajaLista>
-                                        <PortafolioEstudiosCajaLista><PortafolioEstudiosTexto>Análisis de datos</PortafolioEstudiosTexto></PortafolioEstudiosCajaLista>
-                                        <PortafolioEstudiosCajaLista><PortafolioEstudiosParrafo>2018 - UFPR</PortafolioEstudiosParrafo></PortafolioEstudiosCajaLista>
-                                    </PortafolioEstudiosCajaUl>
-                                </PortafolioEstudiosCaja>
-                                <PortafolioEstudiosCaja>
-                                    <PortafolioEstudiosCajaUl >
-                                        <PortafolioEstudiosCajaLista><PortafolioEstudiosImg src={Univ2} alt="logo" /></PortafolioEstudiosCajaLista>
-                                        <PortafolioEstudiosCajaLista><PortafolioEstudiosTexto>Formación en UX Design</PortafolioEstudiosTexto></PortafolioEstudiosCajaLista>
-                                        <PortafolioEstudiosCajaLista><PortafolioEstudiosParrafo>2019 - Alura</PortafolioEstudiosParrafo></PortafolioEstudiosCajaLista>
-                                    </PortafolioEstudiosCajaUl>
-                                </PortafolioEstudiosCaja>
-                                <PortafolioEstudiosCaja>
-                                    <PortafolioEstudiosCajaUl >
-                                        <PortafolioEstudiosCajaLista><PortafolioEstudiosImg src={Univ3} alt="logo" /></PortafolioEstudiosCajaLista>
-                                        <PortafolioEstudiosCajaLista><PortafolioEstudiosTexto>Posgrado en diseño</PortafolioEstudiosTexto></PortafolioEstudiosCajaLista>
-                                        <PortafolioEstudiosCajaLista><PortafolioEstudiosParrafo>En curso - UFRJ</PortafolioEstudiosParrafo></PortafolioEstudiosCajaLista>
-                                    </PortafolioEstudiosCajaUl>
-                                </PortafolioEstudiosCaja>
-                            </PortafolioEstudiosCursos>
-                </PortafolioEstudios>
+                <PrtfEstudios>
+                            <PrtfEstudiosTitulo>Formación académica</PrtfEstudiosTitulo>
+                            <PrtfEstudiosCursos>
+                                <PrtfEstudiosCaja>
+                                    <PrtfEstudiosCajaUl >
+                                        <PrtfEstudiosCajaLista><PrtfEstudiosImg src={Univ1} alt="logo" /></PrtfEstudiosCajaLista>
+                                        <PrtfEstudiosCajaLista><PrtfEstudiosTexto>Análisis de datos</PrtfEstudiosTexto></PrtfEstudiosCajaLista>
+                                        <PrtfEstudiosCajaLista><PrtfEstudiosParrafo>2018 - UFPR</PrtfEstudiosParrafo></PrtfEstudiosCajaLista>
+                                    </PrtfEstudiosCajaUl>
+                                </PrtfEstudiosCaja>
+                                <PrtfEstudiosCaja>
+                                    <PrtfEstudiosCajaUl >
+                                        <PrtfEstudiosCajaLista><PrtfEstudiosImg src={Univ2} alt="logo" /></PrtfEstudiosCajaLista>
+                                        <PrtfEstudiosCajaLista><PrtfEstudiosTexto>Formación en UX Design</PrtfEstudiosTexto></PrtfEstudiosCajaLista>
+                                        <PrtfEstudiosCajaLista><PrtfEstudiosParrafo>2019 - Alura</PrtfEstudiosParrafo></PrtfEstudiosCajaLista>
+                                    </PrtfEstudiosCajaUl>
+                                </PrtfEstudiosCaja>
+                                <PrtfEstudiosCaja>
+                                    <PrtfEstudiosCajaUl >
+                                        <PrtfEstudiosCajaLista><PrtfEstudiosImg src={Univ3} alt="logo" /></PrtfEstudiosCajaLista>
+                                        <PrtfEstudiosCajaLista><PrtfEstudiosTexto>Posgrado en diseño</PrtfEstudiosTexto></PrtfEstudiosCajaLista>
+                                        <PrtfEstudiosCajaLista><PrtfEstudiosParrafo>En curso - UFRJ</PrtfEstudiosParrafo></PrtfEstudiosCajaLista>
+                                    </PrtfEstudiosCajaUl>
+                                </PrtfEstudiosCaja>
+                            </PrtfEstudiosCursos>
+                </PrtfEstudios>
 
-                <PortafolioExperiencia>
-                            <PortafolioExperienciaTitulo>Experiencia Profesional</PortafolioExperienciaTitulo>
-                            <PortafolioExperienciaCaja>
-                                <PortafolioExperienciaImg src={Xp1} alt="" />
-                                <PortafolioExperienciaContenedor>
-                                    <PortafolioExperienciaContainerTitulo>Encriptador de texto</PortafolioExperienciaContainerTitulo>
-                                    <PortafolioExperienciaTexto>Challenge Alura Codificador </PortafolioExperienciaTexto>
-                                    <PortafolioExperienciaContenedorBtn>
-                                        <PortafolioExperienciaSpan><PortafolioExperienciaDescripcion href="https://github.com/alura-challenges/challenge-one-encriptador-latam"><PortafolioExperonciaBtn1 variant="contained" >Repositorio</PortafolioExperonciaBtn1></PortafolioExperienciaDescripcion></PortafolioExperienciaSpan>
-                                        <PortafolioExperienciaSpan><PortafolioExperienciaDescripcion href=""><PortafolioExperonciaBtn2 variant="outlined">Ver Demo</PortafolioExperonciaBtn2></PortafolioExperienciaDescripcion></PortafolioExperienciaSpan>
-                                    </PortafolioExperienciaContenedorBtn>
+                <PrtfExperiencia>
+                            <PrtfExperienciaTitulo>Experiencia Profesional</PrtfExperienciaTitulo>
+                            <PrtfExperienciaCaja>
+                                <PrtfExperienciaImg src={Xp1} alt="" />
+                                <PrtfExperienciaContenedor>
+                                    <PrtfExperienciaContenedorTitulo>Encriptador de texto</PrtfExperienciaContenedorTitulo>
+                                    <PrtfExperienciaContenedorTexto>Challenge Alura Codificador </PrtfExperienciaContenedorTexto>
+                                    <PrtfExperienciaContenedorBtn>
+                                        <PrtfExperienciaSpan><PrtfExperienciaDescripcion href="https://github.com/alura-challenges/challenge-one-encriptador-latam"><PrtfExperienciaBtn1 variant="contained" >Repositorio</PrtfExperienciaBtn1></PrtfExperienciaDescripcion></PrtfExperienciaSpan>
+                                        <PrtfExperienciaSpan><PrtfExperienciaDescripcion href=""><PrtfExperienciaBtn2 variant="outlined">Ver Demo</PrtfExperienciaBtn2></PrtfExperienciaDescripcion></PrtfExperienciaSpan>
+                                    </PrtfExperienciaContenedorBtn>
 
-                                </PortafolioExperienciaContenedor>
+                                </PrtfExperienciaContenedor>
 
-                            </PortafolioExperienciaCaja>  
+                            </PrtfExperienciaCaja>  
 
-                            <PortafolioExperienciaCaja>
-                                <PortafolioExperienciaImg src={Xp2} />
-                                <PortafolioExperienciaContenedor>
-                                    <PortafolioExperienciaContainerTitulo>Juego creado con HTML y JavaScript</PortafolioExperienciaContainerTitulo>
-                                    <PortafolioExperienciaTexto>Challenge Oracle </PortafolioExperienciaTexto>
-                                    <PortafolioExperienciaContenedorBtn>
-                                            <PortafolioExperienciaSpan><PortafolioExperienciaDescripcion href="https://github.com/alura-challenges/challenge-one-juego-ahorcado"><PortafolioExperonciaBtn1 variant="contained" >Repositorio</PortafolioExperonciaBtn1></PortafolioExperienciaDescripcion></PortafolioExperienciaSpan>
-                                            <PortafolioExperienciaSpan><PortafolioExperienciaDescripcion href=""><PortafolioExperonciaBtn2 variant="outlined">Ver Demo</PortafolioExperonciaBtn2></PortafolioExperienciaDescripcion></PortafolioExperienciaSpan>
-                                        </PortafolioExperienciaContenedorBtn>
-                                </PortafolioExperienciaContenedor>
-                            </PortafolioExperienciaCaja>  
+                            <PrtfExperienciaCaja>
+                                <PrtfExperienciaImg src={Xp2} />
+                                <PrtfExperienciaContenedor>
+                                    <PrtfExperienciaContenedorTitulo>Juego creado con HTML y JavaScript</PrtfExperienciaContenedorTitulo>
+                                    <PrtfExperienciaContenedorTexto>Challenge Oracle </PrtfExperienciaContenedorTexto>
+                                    <PrtfExperienciaContenedorBtn>
+                                            <PrtfExperienciaSpan><PrtfExperienciaDescripcion href="https://github.com/alura-challenges/challenge-one-juego-ahorcado"><PrtfExperienciaBtn1 variant="contained" >Repositorio</PrtfExperienciaBtn1></PrtfExperienciaDescripcion></PrtfExperienciaSpan>
+                                            <PrtfExperienciaSpan><PrtfExperienciaDescripcion href=""><PrtfExperienciaBtn2 variant="outlined">Ver Demo</PrtfExperienciaBtn2></PrtfExperienciaDescripcion></PrtfExperienciaSpan>
+                                        </PrtfExperienciaContenedorBtn>
+                                </PrtfExperienciaContenedor>
+                            </PrtfExperienciaCaja>  
 
-                            <PortafolioExperienciaCaja>
-                                <PortafolioExperienciaImg src={Xp3} />
-                                <PortafolioExperienciaContenedor>
-                                    <PortafolioExperienciaContainerTitulo>Encriptador de texto</PortafolioExperienciaContainerTitulo>
-                                    <PortafolioExperienciaTexto>Challenge Oracle </PortafolioExperienciaTexto>
-                                    <PortafolioExperienciaContenedorBtn>
-                                        <PortafolioExperienciaSpan><PortafolioExperienciaDescripcion href="https://github.com/alura-challenges/challenge-one-encriptador-latam"><PortafolioExperonciaBtn1 variant="contained" >Repositorio</PortafolioExperonciaBtn1></PortafolioExperienciaDescripcion></PortafolioExperienciaSpan>
-                                        <PortafolioExperienciaSpan><PortafolioExperienciaDescripcion href=""><PortafolioExperonciaBtn2 variant="outlined">Ver Demo</PortafolioExperonciaBtn2></PortafolioExperienciaDescripcion></PortafolioExperienciaSpan>
-                                    </PortafolioExperienciaContenedorBtn>
-                                </PortafolioExperienciaContenedor>
-                            </PortafolioExperienciaCaja>  
+                            <PrtfExperienciaCaja>
+                                <PrtfExperienciaImg src={Xp3} />
+                                <PrtfExperienciaContenedor>
+                                    <PrtfExperienciaContenedorTitulo>Encriptador de texto</PrtfExperienciaContenedorTitulo>
+                                    <PrtfExperienciaContenedorTexto>Challenge Oracle </PrtfExperienciaContenedorTexto>
+                                    <PrtfExperienciaContenedorBtn>
+                                        <PrtfExperienciaSpan><PrtfExperienciaDescripcion href="https://github.com/alura-challenges/challenge-one-encriptador-latam"><PrtfExperienciaBtn1 variant="contained" >Repositorio</PrtfExperienciaBtn1></PrtfExperienciaDescripcion></PrtfExperienciaSpan>
+                                        <PrtfExperienciaSpan><PrtfExperienciaDescripcion href=""><PrtfExperienciaBtn2 variant="outlined">Ver Demo</PrtfExperienciaBtn2></PrtfExperienciaDescripcion></PrtfExperienciaSpan>
+                                    </PrtfExperienciaContenedorBtn>
+                                </PrtfExperienciaContenedor>
+                            </PrtfExperienciaCaja>  
 
-                            <PortafolioExperienciaCaja>
-                                <PortafolioExperienciaImg src={Xp4} />
-                                <PortafolioExperienciaContenedor>
-                                    <PortafolioExperienciaContainerTitulo>Juego creado con HTML, CSS y JavaScript</PortafolioExperienciaContainerTitulo>
-                                    <PortafolioExperienciaTexto>Challenge Oracle </PortafolioExperienciaTexto>
-                                    <PortafolioExperienciaContenedorBtn>
-                                        <PortafolioExperienciaSpan><PortafolioExperienciaDescripcion href="https://github.com/alura-challenges/challenge-one-juego-ahorcado"><PortafolioExperonciaBtn1 variant="contained" >Repositorio</PortafolioExperonciaBtn1></PortafolioExperienciaDescripcion></PortafolioExperienciaSpan>
-                                        <PortafolioExperienciaSpan><PortafolioExperienciaDescripcion href=""><PortafolioExperonciaBtn2 variant="outlined">Ver Demo</PortafolioExperonciaBtn2></PortafolioExperienciaDescripcion></PortafolioExperienciaSpan>
-                                    </PortafolioExperienciaContenedorBtn>
-                                </PortafolioExperienciaContenedor>
-                            </PortafolioExperienciaCaja>  
-                </PortafolioExperiencia>
+                            <PrtfExperienciaCaja>
+                                <PrtfExperienciaImg src={Xp4} />
+                                <PrtfExperienciaContenedor>
+                                    <PrtfExperienciaContenedorTitulo>Juego creado con HTML, CSS y JavaScript</PrtfExperienciaContenedorTitulo>
+                                    <PrtfExperienciaContenedorTexto>Challenge Oracle </PrtfExperienciaContenedorTexto>
+                                    <PrtfExperienciaContenedorBtn>
+                                        <PrtfExperienciaSpan><PrtfExperienciaDescripcion href="https://github.com/alura-challenges/challenge-one-juego-ahorcado"><PrtfExperienciaBtn1 variant="contained" >Repositorio</PrtfExperienciaBtn1></PrtfExperienciaDescripcion></PrtfExperienciaSpan>
+                                        <PrtfExperienciaSpan><PrtfExperienciaDescripcion href=""><PrtfExperienciaBtn2 variant="outlined">Ver Demo</PrtfExperienciaBtn2></PrtfExperienciaDescripcion></PrtfExperienciaSpan>
+                                    </PrtfExperienciaContenedorBtn>
+                                </PrtfExperienciaContenedor>
+                            </PrtfExperienciaCaja>  
+                </PrtfExperiencia>
 
-                <PortafolioContacto>
-                    <PortafolioContactoContenedor>
-                        <PortafolioContactoCajaIzquierda>
-                            <PortafolioContactoImg src={Contacto} />
-                        </PortafolioContactoCajaIzquierda>
-                        <PortafolioContactoCajaDerecha>
-                            <PortafolioContactoTitulo>Contacto</PortafolioContactoTitulo>
-                            <PortafolioContactoTexto>¿Quieres contactarme?</PortafolioContactoTexto>
-                            <PortafolioContactoTexto>Complete el siguiente formulario y me pondré en contacto con usted lo antes posible. </PortafolioContactoTexto>
+                <PrtfContacto>
+                    <PrtfContactoContenedor>
+                        <PrtfContactoCajaIzquierda>
+                            <PrtfContactoImg src={Contacto} />
+                        </PrtfContactoCajaIzquierda>
+                        <PrtfContactoCajaDerecha>
+                            <PrtfContactoTitulo>Contacto</PrtfContactoTitulo>
+                            <PrtfContactoTexto>¿Quieres contactarme?</PrtfContactoTexto>
+                            <PrtfContactoTexto>Complete el siguiente formulario y me pondré en contacto con usted lo antes posible. </PrtfContactoTexto>
 
                             <FormularioPortafolio manejarCambio={manejarCambio} />
 
-                        </PortafolioContactoCajaDerecha>
-                    </PortafolioContactoContenedor>
-                </PortafolioContacto>
+                        </PrtfContactoCajaDerecha>
+                    </PrtfContactoContenedor>
+                </PrtfContacto>
 
-            </ProtafolioMain>
-        </ProtafolioContenedor>    
+            </PrtfMain>
+        </PrtfContenedor>    
     )
 }
 

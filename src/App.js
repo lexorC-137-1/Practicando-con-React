@@ -4,7 +4,7 @@ import Home from "./Componentes/Paginas/Home";
 import Encriptador from "./Challenges/1.- Encriptador";
 import Portafolio from "./Challenges/2.- Portafolio";
 import AluraGeeks from "./Challenges/3.- AluraGeek";
-import AluraFlix from "./Challenges/Aluraflix";
+import AluraFlix from "./Challenges/4.-Aluraflix";
 import Page404 from "./Componentes/Paginas/Page404";
 import Header from "./Componentes/Header";
 import GlobalStyle from "./GlobalStyle";

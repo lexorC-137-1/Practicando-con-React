@@ -5,6 +5,7 @@ import { validarNombre, validarCorreo, validarAsunto, validarMensaje } from "./v
 
 
 const Formulario = styled.form`
+
 ` 
 
 const FormularioPortafolio = ({manejarCambio}) => {
@@ -102,7 +103,7 @@ const FormularioPortafolio = ({manejarCambio}) => {
             helperText={mensaje.valid === false && "Deben ser al menos 4 caracteres"}
             />
 
-            <Button variant="contained" type="submit">Enviar Mensaje</Button>
+            <Button variant="contained" type="submit" >Enviar Mensaje</Button>
         </Formulario>
     )
 }

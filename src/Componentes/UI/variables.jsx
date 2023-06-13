@@ -1,4 +1,4 @@
-export const fondoClaro = "#d7f7e3";
+export const fondoClaro = "#7ed7d7";
 export const contenidoClaro = "#b7eef6"
 export const textoFondoClaro = "#165b6a";
 
